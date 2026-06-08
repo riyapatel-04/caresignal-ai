@@ -1,0 +1,347 @@
+[0m19:20:07.684349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252F1C14D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EEEABE00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252F1ABE9C0>]}
+
+
+============================== 19:20:07.687912 | 6d998e94-b512-4050-bff7-fd8b68b54799 ==============================
+[0m19:20:07.687912 [info ] [MainThread]: Running with dbt=1.11.11
+[0m19:20:07.688931 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\RIYA\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select staging', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\RIYA\\caresignal-ai\\dbt_project\\logs'}
+[0m19:20:08.415806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252846B85C0>]}
+[0m19:20:08.524296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252843B8770>]}
+[0m19:20:08.525348 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m19:20:08.821047 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m19:20:08.821047 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:20:08.822038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025284DBD3D0>]}
+[0m19:20:09.695213 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.caresignal.marts
+[0m19:20:09.699060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252853F3CE0>]}
+[0m19:20:09.752005 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\manifest.json
+[0m19:20:09.759629 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\semantic_manifest.json
+[0m19:20:09.767652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025285395D30>]}
+[0m19:20:09.767652 [info ] [MainThread]: Found 3 models, 549 macros
+[0m19:20:09.768659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252854071D0>]}
+[0m19:20:09.769652 [info ] [MainThread]: 
+[0m19:20:09.770652 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:20:09.770652 [info ] [MainThread]: 
+[0m19:20:09.771652 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m19:20:09.774652 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_caresignal-ai'
+[0m19:20:09.774652 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:20:10.827451 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_caresignal-ai, now create_caresignal-ai_caresignal_dev_staging)
+[0m19:20:10.828444 [debug] [ThreadPool]: Creating schema "database: "caresignal-ai"
+schema: "caresignal_dev_staging"
+"
+[0m19:20:10.835215 [debug] [ThreadPool]: On create_caresignal-ai_caresignal_dev_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "caresignal", "target_name": "dev", "connection_name": "create_caresignal-ai_caresignal_dev_staging"} */
+create schema if not exists `caresignal-ai`.`caresignal_dev_staging`
+  
+[0m19:20:10.836210 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:20:11.934701 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=caresignal-ai&j=bq:US:f32d5e37-2418-467e-8267-de1247b05d3c&page=queryresults
+[0m19:20:12.778931 [debug] [ThreadPool]: SQL status: OK in 0.844 seconds
+[0m19:20:12.928944 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_caresignal-ai_caresignal_dev_staging'
+[0m19:20:12.928944 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:20:13.880265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025284CBE4B0>]}
+[0m19:20:13.880265 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:20:13.935890 [debug] [Thread-1 (]: Began running node model.caresignal.stg_beneficiaries
+[0m19:20:13.936885 [debug] [Thread-2 (]: Began running node model.caresignal.stg_medical_claims
+[0m19:20:13.936885 [info ] [Thread-1 (]: 1 of 3 START sql view model caresignal_dev_staging.stg_beneficiaries ........... [RUN]
+[0m19:20:13.937870 [debug] [Thread-3 (]: Began running node model.caresignal.stg_pharmacy_claims
+[0m19:20:13.937870 [info ] [Thread-2 (]: 2 of 3 START sql view model caresignal_dev_staging.stg_medical_claims .......... [RUN]
+[0m19:20:13.938852 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.caresignal.stg_beneficiaries'
+[0m19:20:13.939851 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.caresignal.stg_medical_claims'
+[0m19:20:13.938852 [info ] [Thread-3 (]: 3 of 3 START sql view model caresignal_dev_staging.stg_pharmacy_claims ......... [RUN]
+[0m19:20:13.939851 [debug] [Thread-1 (]: Began compiling node model.caresignal.stg_beneficiaries
+[0m19:20:13.940905 [debug] [Thread-2 (]: Began compiling node model.caresignal.stg_medical_claims
+[0m19:20:13.940905 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.caresignal.stg_pharmacy_claims'
+[0m19:20:13.949865 [debug] [Thread-1 (]: Writing injected SQL for node "model.caresignal.stg_beneficiaries"
+[0m19:20:13.952998 [debug] [Thread-2 (]: Writing injected SQL for node "model.caresignal.stg_medical_claims"
+[0m19:20:13.952998 [debug] [Thread-3 (]: Began compiling node model.caresignal.stg_pharmacy_claims
+[0m19:20:13.956984 [debug] [Thread-3 (]: Writing injected SQL for node "model.caresignal.stg_pharmacy_claims"
+[0m19:20:13.959891 [debug] [Thread-1 (]: Began executing node model.caresignal.stg_beneficiaries
+[0m19:20:13.987908 [debug] [Thread-1 (]: Writing runtime sql for node "model.caresignal.stg_beneficiaries"
+[0m19:20:13.988924 [debug] [Thread-2 (]: Began executing node model.caresignal.stg_medical_claims
+[0m19:20:13.988924 [debug] [Thread-3 (]: Began executing node model.caresignal.stg_pharmacy_claims
+[0m19:20:13.992906 [debug] [Thread-2 (]: Writing runtime sql for node "model.caresignal.stg_medical_claims"
+[0m19:20:13.996331 [debug] [Thread-3 (]: Writing runtime sql for node "model.caresignal.stg_pharmacy_claims"
+[0m19:20:13.998929 [debug] [Thread-3 (]: On model.caresignal.stg_pharmacy_claims: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "caresignal", "target_name": "dev", "node_id": "model.caresignal.stg_pharmacy_claims"} */
+
+
+  create or replace view `caresignal-ai`.`caresignal_dev_staging`.`stg_pharmacy_claims`
+  OPTIONS()
+  as with source as (
+    select * from `caresignal-ai.caresignal_dev.raw_pharmacy_claims`
+),
+
+renamed as (
+    select
+        claim_id,
+        beneficiary_id,
+        drug_name,
+        date(fill_date) as fill_date,
+        days_supply,
+        quantity,
+        refill_number,
+        cast(missed_refill as bool) as missed_refill,
+        prescriber_state,
+        total_drug_cost,
+        date_add(date(fill_date), interval days_supply day) as next_refill_due_date
+    from source
+)
+
+select * from renamed;
+
+
+[0m19:20:13.998929 [debug] [Thread-2 (]: On model.caresignal.stg_medical_claims: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "caresignal", "target_name": "dev", "node_id": "model.caresignal.stg_medical_claims"} */
+
+
+  create or replace view `caresignal-ai`.`caresignal_dev_staging`.`stg_medical_claims`
+  OPTIONS()
+  as with source as (
+    select * from `caresignal-ai.caresignal_dev.raw_medical_claims`
+),
+
+renamed as (
+    select
+        claim_id,
+        beneficiary_id,
+        claim_type,
+        date(visit_date) as visit_date,
+        diagnosis_code,
+        diagnosis_description,
+        total_charge_amount,
+        medicare_payment_amount,
+        provider_state,
+        case
+            when claim_type = 'ER' then true
+            else false
+        end as is_er_visit,
+        case
+            when claim_type = 'Inpatient' then true
+            else false
+        end as is_inpatient
+    from source
+)
+
+select * from renamed;
+
+
+[0m19:20:14.000030 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m19:20:14.000030 [debug] [Thread-1 (]: On model.caresignal.stg_beneficiaries: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "caresignal", "target_name": "dev", "node_id": "model.caresignal.stg_beneficiaries"} */
+
+
+  create or replace view `caresignal-ai`.`caresignal_dev_staging`.`stg_beneficiaries`
+  OPTIONS()
+  as with source as (
+    select * from `caresignal-ai.caresignal_dev.raw_beneficiaries`
+),
+
+renamed as (
+    select
+        beneficiary_id,
+        first_name,
+        last_name,
+        date(date_of_birth) as date_of_birth,
+        gender,
+        state,
+        zip_code,
+        primary_condition,
+        cast(has_diabetes as bool) as has_diabetes,
+        cast(has_hypertension as bool) as has_hypertension,
+        cast(has_heart_disease as bool) as has_heart_disease,
+        date_diff(current_date(), date(date_of_birth), year) as age
+    from source
+)
+
+select * from renamed;
+
+
+[0m19:20:14.001026 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m19:20:14.001026 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:20:15.497403 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=caresignal-ai&j=bq:US:2eaad0bf-7d2d-4671-973c-80036f280804&page=queryresults
+[0m19:20:15.538365 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=caresignal-ai&j=bq:US:9a83f069-676d-4714-86b8-f53399657b2e&page=queryresults
+[0m19:20:15.571729 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=caresignal-ai&j=bq:US:4438f678-cf0e-432d-a3be-2943ad45e8d5&page=queryresults
+[0m19:20:15.832639 [debug] [Thread-3 (]: SQL status: OK in 0.294 seconds
+[0m19:20:15.850245 [debug] [Thread-1 (]: SQL status: OK in 0.351 seconds
+[0m19:20:15.853326 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252853DBDD0>]}
+[0m19:20:15.854314 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252853CAB70>]}
+[0m19:20:15.853326 [info ] [Thread-3 (]: 3 of 3 OK created sql view model caresignal_dev_staging.stg_pharmacy_claims .... [[32mCREATE VIEW (0 processed)[0m in 1.91s]
+[0m19:20:15.855233 [debug] [Thread-3 (]: Finished running node model.caresignal.stg_pharmacy_claims
+[0m19:20:15.854314 [info ] [Thread-1 (]: 1 of 3 OK created sql view model caresignal_dev_staging.stg_beneficiaries ...... [[32mCREATE VIEW (0 processed)[0m in 1.91s]
+[0m19:20:15.856230 [debug] [Thread-1 (]: Finished running node model.caresignal.stg_beneficiaries
+[0m19:20:15.881503 [debug] [Thread-2 (]: SQL status: OK in 0.309 seconds
+[0m19:20:15.884539 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6d998e94-b512-4050-bff7-fd8b68b54799', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EF09C860>]}
+[0m19:20:15.884539 [info ] [Thread-2 (]: 2 of 3 OK created sql view model caresignal_dev_staging.stg_medical_claims ..... [[32mCREATE VIEW (0 processed)[0m in 1.95s]
+[0m19:20:15.885595 [debug] [Thread-2 (]: Finished running node model.caresignal.stg_medical_claims
+[0m19:20:15.887499 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:20:15.922176 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:20:15.922176 [debug] [MainThread]: Connection 'create_caresignal-ai_caresignal_dev_staging' was properly closed.
+[0m19:20:15.922176 [debug] [MainThread]: Connection 'list_caresignal-ai_caresignal_dev_staging' was properly closed.
+[0m19:20:15.923188 [debug] [MainThread]: Connection 'model.caresignal.stg_beneficiaries' was properly closed.
+[0m19:20:15.923188 [debug] [MainThread]: Connection 'model.caresignal.stg_medical_claims' was properly closed.
+[0m19:20:15.923188 [debug] [MainThread]: Connection 'model.caresignal.stg_pharmacy_claims' was properly closed.
+[0m19:20:15.924190 [info ] [MainThread]: 
+[0m19:20:15.924190 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 6.15 seconds (6.15s).
+[0m19:20:15.925100 [debug] [MainThread]: Command end result
+[0m19:20:15.950505 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\manifest.json
+[0m19:20:15.952490 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\semantic_manifest.json
+[0m19:20:15.957447 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\RIYA\caresignal-ai\dbt_project\target\run_results.json
+[0m19:20:15.957447 [info ] [MainThread]: 
+[0m19:20:15.958451 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:20:15.958451 [info ] [MainThread]: 
+[0m19:20:15.959296 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m19:20:15.959296 [debug] [MainThread]: Command `python -m dbt.cli.main run` succeeded at 19:20:15.959296 after 8.39 seconds
+[0m19:20:15.960470 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252F18E26F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252F1B6CD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252F163D700>]}
+[0m19:20:15.960470 [debug] [MainThread]: Flushing usage events
+[0m19:20:16.329874 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:21:30.940021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7D4A9340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA79D0FFB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7D4A93D0>]}
+
+
+============================== 19:21:30.955354 | 8ea0226a-17f7-4a9c-ad4e-64fb864aa993 ==============================
+[0m19:21:30.955354 [info ] [MainThread]: Running with dbt=1.11.11
+[0m19:21:30.955354 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\RIYA\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --select marts', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\RIYA\\caresignal-ai\\dbt_project\\logs'}
+[0m19:21:31.645833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7EDED010>]}
+[0m19:21:31.753730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA102D4B30>]}
+[0m19:21:31.754809 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m19:21:32.031425 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m19:21:32.121242 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m19:21:32.122242 [debug] [MainThread]: Partial parsing: added file: caresignal://models\marts\mart_patient_timeline.sql
+[0m19:21:32.317827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA11C7DEE0>]}
+[0m19:21:32.370204 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\manifest.json
+[0m19:21:32.372201 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\semantic_manifest.json
+[0m19:21:32.380221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA1097A750>]}
+[0m19:21:32.380221 [info ] [MainThread]: Found 4 models, 549 macros
+[0m19:21:32.381207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA11C7EB40>]}
+[0m19:21:32.382134 [info ] [MainThread]: 
+[0m19:21:32.383136 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:21:32.383136 [info ] [MainThread]: 
+[0m19:21:32.384134 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m19:21:32.385134 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_caresignal-ai'
+[0m19:21:32.385134 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:21:33.238352 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_caresignal-ai, now create_caresignal-ai_caresignal_dev_marts)
+[0m19:21:33.238352 [debug] [ThreadPool]: Creating schema "database: "caresignal-ai"
+schema: "caresignal_dev_marts"
+"
+[0m19:21:33.245971 [debug] [ThreadPool]: On create_caresignal-ai_caresignal_dev_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "caresignal", "target_name": "dev", "connection_name": "create_caresignal-ai_caresignal_dev_marts"} */
+create schema if not exists `caresignal-ai`.`caresignal_dev_marts`
+  
+[0m19:21:33.246978 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:21:34.137864 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=caresignal-ai&j=bq:US:dcc32952-febf-42e7-89c8-a6f184f8ae07&page=queryresults
+[0m19:21:34.871171 [debug] [ThreadPool]: SQL status: OK in 0.733 seconds
+[0m19:21:34.911805 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_caresignal-ai_caresignal_dev_staging'
+[0m19:21:34.912796 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:21:34.944730 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_caresignal-ai_caresignal_dev_marts'
+[0m19:21:34.944730 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:21:35.901796 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7A820D40>]}
+[0m19:21:35.901796 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:21:35.936505 [debug] [Thread-1 (]: Began running node model.caresignal.mart_patient_timeline
+[0m19:21:35.936505 [info ] [Thread-1 (]: 1 of 1 START sql table model caresignal_dev_marts.mart_patient_timeline ........ [RUN]
+[0m19:21:35.937505 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.caresignal.mart_patient_timeline'
+[0m19:21:35.937505 [debug] [Thread-1 (]: Began compiling node model.caresignal.mart_patient_timeline
+[0m19:21:35.945407 [debug] [Thread-1 (]: Writing injected SQL for node "model.caresignal.mart_patient_timeline"
+[0m19:21:35.946406 [debug] [Thread-1 (]: Began executing node model.caresignal.mart_patient_timeline
+[0m19:21:35.974879 [debug] [Thread-1 (]: Writing runtime sql for node "model.caresignal.mart_patient_timeline"
+[0m19:21:35.976384 [debug] [Thread-1 (]: On model.caresignal.mart_patient_timeline: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "caresignal", "target_name": "dev", "node_id": "model.caresignal.mart_patient_timeline"} */
+
+  
+    
+
+    create or replace table `caresignal-ai`.`caresignal_dev_marts`.`mart_patient_timeline`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      with beneficiaries as (
+    select * from `caresignal-ai`.`caresignal_dev_staging`.`stg_beneficiaries`
+),
+
+pharmacy as (
+    select
+        beneficiary_id,
+        count(*) as total_prescriptions,
+        countif(missed_refill = true) as total_missed_refills,
+        round(safe_divide(
+            countif(missed_refill = false),
+            count(*)
+        ), 2) as pdc_score,
+        max(fill_date) as last_fill_date,
+        min(fill_date) as first_fill_date,
+        string_agg(distinct drug_name, ', ') as drugs_prescribed
+    from `caresignal-ai`.`caresignal_dev_staging`.`stg_pharmacy_claims`
+    group by beneficiary_id
+),
+
+medical as (
+    select
+        beneficiary_id,
+        count(*) as total_medical_claims,
+        countif(is_er_visit = true) as total_er_visits,
+        countif(is_inpatient = true) as total_inpatient_visits,
+        max(visit_date) as last_visit_date,
+        round(sum(total_charge_amount), 2) as total_charge_amount
+    from `caresignal-ai`.`caresignal_dev_staging`.`stg_medical_claims`
+    group by beneficiary_id
+),
+
+final as (
+    select
+        b.beneficiary_id,
+        b.first_name,
+        b.last_name,
+        b.date_of_birth,
+        b.age,
+        b.gender,
+        b.state,
+        b.primary_condition,
+        b.has_diabetes,
+        b.has_hypertension,
+        b.has_heart_disease,
+        coalesce(p.total_prescriptions, 0) as total_prescriptions,
+        coalesce(p.total_missed_refills, 0) as total_missed_refills,
+        coalesce(p.pdc_score, 0) as pdc_score,
+        p.last_fill_date,
+        p.first_fill_date,
+        p.drugs_prescribed,
+        coalesce(m.total_medical_claims, 0) as total_medical_claims,
+        coalesce(m.total_er_visits, 0) as total_er_visits,
+        coalesce(m.total_inpatient_visits, 0) as total_inpatient_visits,
+        m.last_visit_date,
+        coalesce(m.total_charge_amount, 0) as total_charge_amount,
+        case
+            when coalesce(p.pdc_score, 0) < 0.8 then 'HIGH'
+            when coalesce(p.pdc_score, 0) < 0.9 then 'MEDIUM'
+            else 'LOW'
+        end as adherence_risk_level
+    from beneficiaries b
+    left join pharmacy p on b.beneficiary_id = p.beneficiary_id
+    left join medical m on b.beneficiary_id = m.beneficiary_id
+)
+
+select * from final
+    );
+  
+[0m19:21:35.977391 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:21:37.453996 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=caresignal-ai&j=bq:US:73aa6e4c-9ce7-4f03-a031-92324cee4b98&page=queryresults
+[0m19:21:39.576220 [debug] [Thread-1 (]: SQL status: OK in 2.122 seconds
+[0m19:21:39.798419 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8ea0226a-17f7-4a9c-ad4e-64fb864aa993', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA10416180>]}
+[0m19:21:39.798419 [info ] [Thread-1 (]: 1 of 1 OK created sql table model caresignal_dev_marts.mart_patient_timeline ... [[32mCREATE TABLE (1.0k rows, 913.3 KiB processed)[0m in 3.86s]
+[0m19:21:39.799330 [debug] [Thread-1 (]: Finished running node model.caresignal.mart_patient_timeline
+[0m19:21:39.801139 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:21:39.831773 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:21:39.832779 [debug] [MainThread]: Connection 'create_caresignal-ai_caresignal_dev_marts' was properly closed.
+[0m19:21:39.832779 [debug] [MainThread]: Connection 'list_caresignal-ai_caresignal_dev_staging' was properly closed.
+[0m19:21:39.832779 [debug] [MainThread]: Connection 'list_caresignal-ai_caresignal_dev_marts' was properly closed.
+[0m19:21:39.833728 [debug] [MainThread]: Connection 'model.caresignal.mart_patient_timeline' was properly closed.
+[0m19:21:39.833728 [info ] [MainThread]: 
+[0m19:21:39.833728 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 7.45 seconds (7.45s).
+[0m19:21:39.834984 [debug] [MainThread]: Command end result
+[0m19:21:39.857078 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\manifest.json
+[0m19:21:39.858124 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\caresignal-ai\dbt_project\target\semantic_manifest.json
+[0m19:21:39.863136 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\RIYA\caresignal-ai\dbt_project\target\run_results.json
+[0m19:21:39.863136 [info ] [MainThread]: 
+[0m19:21:39.864041 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:21:39.864041 [info ] [MainThread]: 
+[0m19:21:39.865081 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m19:21:39.865081 [debug] [MainThread]: Command `python -m dbt.cli.main run` succeeded at 19:21:39.865081 after 9.03 seconds
+[0m19:21:39.865081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7D25FC20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7D25DF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AA7D25DDF0>]}
+[0m19:21:39.866135 [debug] [MainThread]: Flushing usage events
+[0m19:21:40.220824 [debug] [MainThread]: An error was encountered while trying to flush usage events

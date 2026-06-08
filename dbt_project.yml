@@ -1,0 +1,11 @@
+name: caresignal
+version: '1.0.0'
+profile: caresignal
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+models:
+  caresignal:
+    +materialized: view
